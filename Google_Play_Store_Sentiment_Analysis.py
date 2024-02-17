@@ -15,3 +15,12 @@ data["Positive"] = [sentiments.polarity_scores(i)["pos"] for i in data["Translat
 data["Negative"] = [sentiments.polarity_scores(i)["neg"] for i in data["Translated_Review"]]
 data["Neutral"] = [sentiments.polarity_scores(i)["neu"] for i in data["Translated_Review"]]
 print(data.head())
+
+import matplotlib.pyplot as plt
+import seaborn as sns
+plt.figure(figsize=(15, 10))
+sns.scatterplot(data['Sentiment_Polarity'], data['Sentiment_Subjectivity'], 
+                hue = data['Sentiment'], edgecolor='white', palette="twilight_shifted_r")
+plt.title("Google Play Store Reviews Sentiment Analysis", fontsize=20)
+plt.show() 
+
