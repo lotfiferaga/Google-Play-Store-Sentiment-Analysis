@@ -6,3 +6,5 @@ print(data.head())
 
 print(data.isnull().sum())
 
+data = data.dropna()
+print(data.isnull().sum())
